@@ -8,3 +8,13 @@
 海外のサービスは結構良い線行っていて、[AniList](https://anilist.co/)が提供しているAPIなんかはまさに自分が欲していたAPIだ。だが日本語向きのサービスじゃない...
 
 そこでRuby学習ついでにAPIサーバ作ってみることにした。
+
+
+## Usage
+```
+git clone git@github:leoisaac/aniapi && cd aniapi
+docker run -itd --name aniapi -v $(pwd):/mnt --workdir /mnt -p 80:3000 rails:5.0 bash -c 'bundle install && bash'
+```
+これでDockerコンテナを立ち上げます。
+
+あとは、`docker exec -it aniapi rails server -b 0.0.0.0`すれば`http://localhost/`で確認できます。
